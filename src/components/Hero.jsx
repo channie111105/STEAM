@@ -1,8 +1,11 @@
+import Antigravity from './Antigravity'
+import AnimatedContent from './AnimatedContent'
+
 export function Hero() {
   return (
     <section className="hero-section section-shell" id="hero">
       <div className="hero-copy">
-        <p className="eyebrow">Creative tech for students</p>
+        <p className="eyebrow">Công nghệ sáng tạo cho học sinh</p>
         <h1>Khơi mở tư duy công nghệ cho trẻ bằng những dự án thật.</h1>
         <p className="section-lead">
           STEAM Lab giúp học sinh làm quen với Scratch, lập trình web và phát
@@ -18,7 +21,7 @@ export function Hero() {
           </a>
         </div>
 
-        <div className="hero-stats" aria-label="STEAM Lab highlights">
+        <div className="hero-stats" aria-label="Điểm nhấn của STEAM Lab">
           <article>
             <strong>12+</strong>
             <span>Dự án mỗi khóa</span>
@@ -34,11 +37,54 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="hero-visual" aria-hidden="true">
-        <div className="orbit-card">
-          <span>Scratch</span>
-          <span>Web</span>
-          <span>Game</span>
+      <div className="hero-visual">
+        <div className="hero-lab-card">
+          <Antigravity
+            count={300}
+            magnetRadius={6}
+            ringRadius={7}
+            waveSpeed={0.4}
+            waveAmplitude={1}
+            particleSize={1.5}
+            lerpSpeed={0.05}
+            color="#ef6c33"
+            autoAnimate
+            particleVariance={1}
+            rotationSpeed={0}
+            depthFactor={1}
+            pulseSpeed={3}
+            particleShape="capsule"
+            fieldStrength={10}
+          />
+
+          <div className="hero-lab-overlay">
+            <AnimatedContent
+              distance={100}
+              direction="vertical"
+              reverse={false}
+              duration={0.8}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              scale={1}
+              threshold={0.1}
+              delay={0}
+            >
+              <div className="hero-lab-overlay-inner">
+                <p className="hero-lab-kicker">Học qua dự án STEAM</p>
+                <h3>Tư duy liên môn cho học sinh</h3>
+                <p>
+                  Kết hợp khoa học, công nghệ, kỹ thuật, nghệ thuật và toán học
+                  trong mỗi hoạt động khám phá.
+                </p>
+                <div className="hero-lab-tags" aria-label="Trụ cột STEAM">
+                  <span>Khoa học</span>
+                  <span>Kỹ thuật</span>
+                  <span>Sáng tạo</span>
+                </div>
+              </div>
+            </AnimatedContent>
+          </div>
         </div>
       </div>
     </section>

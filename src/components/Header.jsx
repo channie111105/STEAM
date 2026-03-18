@@ -1,14 +1,38 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const lastScrollYRef = useRef(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      const isScrollingDown =
+        currentScrollY > lastScrollYRef.current && currentScrollY > 24
+
+      setIsScrolled(isScrollingDown)
+      lastScrollYRef.current = currentScrollY
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const handleCloseMenu = () => {
     setIsMenuOpen(false)
   }
 
   return (
-    <header className="site-header section-shell">
+    <header
+      className={`site-header ${isMenuOpen ? 'site-header-open' : ''} ${
+        isScrolled ? 'site-header-scrolled' : ''
+      }`}
+    >
       <a className="brand-mark" href="#hero" aria-label="STEAM home">
         <span className="brand-badge">S</span>
         <span className="brand-copy">
@@ -21,7 +45,7 @@ export function Header() {
         className="menu-toggle"
         type="button"
         aria-expanded={isMenuOpen}
-        aria-label="Open navigation menu"
+        aria-label="Mở menu điều hướng"
         onClick={() => setIsMenuOpen((currentState) => !currentState)}
       >
         Menu
@@ -29,7 +53,7 @@ export function Header() {
 
       <nav
         className={`site-nav ${isMenuOpen ? 'site-nav-open' : ''}`}
-        aria-label="Main navigation"
+        aria-label="Điều hướng chính"
       >
         <a href="#hero" onClick={handleCloseMenu}>
           Trang chủ
