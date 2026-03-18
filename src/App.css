@@ -109,6 +109,17 @@ main {
   gap: 1rem;
 }
 
+.menu-toggle {
+  display: none;
+  min-height: 3rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgb(27 42 65 / 0.12);
+  background: rgb(255 255 255 / 0.72);
+  color: var(--ink);
+  font-weight: 700;
+}
+
 .site-nav a,
 .secondary-link {
   color: var(--ink);
@@ -571,6 +582,8 @@ main {
   }
 
   .site-header {
+    display: grid;
+    grid-template-columns: auto auto;
     align-items: start;
   }
 
@@ -578,6 +591,35 @@ main {
   .testimonial-grid,
   .hero-stats {
     grid-template-columns: 1fr;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+  }
+
+  .site-nav,
+  .header-cta {
+    display: none;
+  }
+
+  .site-nav.site-nav-open {
+    display: grid;
+    grid-column: 1 / -1;
+    gap: 0.35rem;
+    padding-top: 0.4rem;
+  }
+
+  .site-nav.site-nav-open a,
+  .site-header .header-cta {
+    justify-content: center;
+  }
+
+  .site-header .header-cta {
+    display: inline-flex;
+    grid-column: 1 / -1;
   }
 
   .hero-visual {
