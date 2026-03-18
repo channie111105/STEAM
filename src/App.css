@@ -409,6 +409,67 @@ main {
   color: var(--muted);
 }
 
+.form-section {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.form-copy {
+  align-self: center;
+}
+
+.enrollment-form {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1.8rem;
+  background: rgb(255 255 255 / 0.68);
+  border: 1px solid rgb(27 42 65 / 0.08);
+}
+
+.enrollment-form label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.enrollment-form input {
+  min-height: 3.3rem;
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgb(27 42 65 / 0.12);
+  background: rgb(255 253 247 / 0.95);
+  color: var(--ink);
+  font-size: 1rem;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.enrollment-form input:focus {
+  outline: none;
+  border-color: rgb(239 108 51 / 0.5);
+  box-shadow: 0 0 0 4px rgb(239 108 51 / 0.12);
+  transform: translateY(-1px);
+}
+
+.form-button {
+  border: 0;
+  cursor: pointer;
+}
+
+.form-message {
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  background: rgb(239 108 51 / 0.1);
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
 @keyframes float-card {
   0%,
   100% {
