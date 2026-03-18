@@ -1,4 +1,5 @@
 import Antigravity from './Antigravity'
+import AnimatedContent from './AnimatedContent'
 
 export function Hero() {
   return (
@@ -57,14 +58,32 @@ export function Hero() {
           />
 
           <div className="hero-lab-overlay">
-            <p className="hero-lab-kicker">Mô phỏng antigravity</p>
-            <h3>Không gian sáng tạo STEAM</h3>
-            <p>Chạm hoặc rê chuột để thấy các hạt chuyển động theo trường hút.</p>
-            <div className="hero-lab-tags" aria-label="Lĩnh vực nổi bật">
-              <span>Scratch</span>
-              <span>Web</span>
-              <span>Game</span>
-            </div>
+            <AnimatedContent
+              distance={100}
+              direction="vertical"
+              reverse={false}
+              duration={0.8}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              scale={1}
+              threshold={0.1}
+              delay={0}
+            >
+              <div className="hero-lab-overlay-inner">
+                <p className="hero-lab-kicker">Mô phỏng antigravity</p>
+                <h3>Không gian sáng tạo STEAM</h3>
+                <p>
+                  Chạm hoặc rê chuột để thấy các hạt chuyển động theo trường
+                  hút.
+                </p>
+                <div className="hero-lab-tags" aria-label="Lĩnh vực nổi bật">
+                  <span>Scratch</span>
+                  <span>Web</span>
+                  <span>Game</span>
+                </div>
+              </div>
+            </AnimatedContent>
           </div>
         </div>
       </div>

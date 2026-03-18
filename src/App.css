@@ -335,12 +335,15 @@ main {
 .hero-lab-overlay {
   position: absolute;
   inset: auto 1rem 1rem 1rem;
-  display: grid;
-  gap: 0.8rem;
   padding: 1rem;
   border-radius: 1.4rem;
   background: linear-gradient(180deg, rgb(9 17 31 / 0.1), rgb(9 17 31 / 0.72));
   backdrop-filter: blur(12px);
+}
+
+.hero-lab-overlay-inner {
+  display: grid;
+  gap: 0.8rem;
 }
 
 .hero-lab-kicker {
