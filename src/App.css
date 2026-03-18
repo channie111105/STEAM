@@ -188,6 +188,32 @@ main {
   gap: 1rem;
 }
 
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.hero-stats article {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem;
+  border-radius: 1.4rem;
+  background: rgb(255 255 255 / 0.52);
+  border: 1px solid rgb(27 42 65 / 0.08);
+}
+
+.hero-stats strong {
+  color: var(--ink);
+  font-size: 1.6rem;
+  font-family: var(--font-display);
+}
+
+.hero-stats span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .primary-button {
   display: inline-flex;
   align-items: center;
