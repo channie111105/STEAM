@@ -363,6 +363,39 @@ main {
   font-size: 0.92rem;
 }
 
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  display: grid;
+  gap: 1.4rem;
+  padding: 1.6rem;
+  border-radius: 1.8rem;
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.8), rgb(240 246 255 / 0.7));
+  border: 1px solid rgb(27 42 65 / 0.08);
+}
+
+.testimonial-quote {
+  font-size: 1.04rem;
+}
+
+.testimonial-meta {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.testimonial-meta strong {
+  color: var(--ink);
+}
+
+.testimonial-meta span {
+  color: var(--muted);
+}
+
 @keyframes float-card {
   0%,
   100% {
