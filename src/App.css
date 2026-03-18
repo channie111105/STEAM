@@ -1,6 +1,30 @@
 .page-shell {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+}
+
+.page-antigravity {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  opacity: 0.34;
+  filter: blur(0.4px);
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    transparent 0%,
+    transparent 26%,
+    rgb(0 0 0 / 0.8) 58%,
+    black 100%
+  );
+  mask-image: radial-gradient(
+    circle at center,
+    transparent 0%,
+    transparent 26%,
+    rgb(0 0 0 / 0.8) 58%,
+    black 100%
+  );
 }
 
 .page-glow {
@@ -663,5 +687,23 @@ main {
 
   .hero-lab-card {
     width: min(100%, 18rem);
+  }
+
+  .page-antigravity {
+    opacity: 0.24;
+    -webkit-mask-image: radial-gradient(
+      circle at center,
+      transparent 0%,
+      transparent 18%,
+      rgb(0 0 0 / 0.8) 62%,
+      black 100%
+    );
+    mask-image: radial-gradient(
+      circle at center,
+      transparent 0%,
+      transparent 18%,
+      rgb(0 0 0 / 0.8) 62%,
+      black 100%
+    );
   }
 }
