@@ -10,39 +10,61 @@ import { Testimonials } from './components/Testimonials'
 function App() {
   return (
     <div className="page-shell">
-      <div className="page-antigravity" aria-hidden="true">
+      <div className="page-edge page-edge-left" aria-hidden="true">
         <Antigravity
-          count={420}
+          count={260}
           magnetRadius={7}
-          ringRadius={10}
-          waveSpeed={0.28}
-          waveAmplitude={1.2}
-          particleSize={1.3}
-          lerpSpeed={0.035}
+          ringRadius={9}
+          waveSpeed={0.35}
+          waveAmplitude={1.3}
+          particleSize={1.5}
+          lerpSpeed={0.045}
           color="#ffb347"
           autoAnimate
-          particleVariance={1.1}
-          rotationSpeed={0.12}
+          particleVariance={1.2}
+          rotationSpeed={0.06}
           depthFactor={1.2}
-          pulseSpeed={2.2}
+          pulseSpeed={2.8}
           particleShape="capsule"
-          fieldStrength={8}
+          fieldStrength={9}
+        />
+      </div>
+
+      <div className="page-edge page-edge-right" aria-hidden="true">
+        <Antigravity
+          count={260}
+          magnetRadius={7}
+          ringRadius={9}
+          waveSpeed={0.35}
+          waveAmplitude={1.3}
+          particleSize={1.5}
+          lerpSpeed={0.045}
+          color="#8eb8ff"
+          autoAnimate
+          particleVariance={1.2}
+          rotationSpeed={-0.06}
+          depthFactor={1.2}
+          pulseSpeed={2.8}
+          particleShape="capsule"
+          fieldStrength={9}
         />
       </div>
 
       <div className="page-glow page-glow-left" aria-hidden="true" />
       <div className="page-glow page-glow-right" aria-hidden="true" />
 
-      <Header />
+      <div className="page-content">
+        <Header />
 
-      <main>
-        <Hero />
-        <Courses />
-        <Testimonials />
-        <EnrollmentForm />
-      </main>
+        <main>
+          <Hero />
+          <Courses />
+          <Testimonials />
+          <EnrollmentForm />
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   )
 }
