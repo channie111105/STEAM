@@ -71,16 +71,16 @@ export function Hero() {
               delay={0}
             >
               <div className="hero-lab-overlay-inner">
-                <p className="hero-lab-kicker">Mô phỏng antigravity</p>
-                <h3>Không gian sáng tạo STEAM</h3>
+                <p className="hero-lab-kicker">Học qua dự án STEAM</p>
+                <h3>Tư duy liên môn cho học sinh</h3>
                 <p>
-                  Chạm hoặc rê chuột để thấy các hạt chuyển động theo trường
-                  hút.
+                  Kết hợp khoa học, công nghệ, kỹ thuật, nghệ thuật và toán học
+                  trong mỗi hoạt động khám phá.
                 </p>
-                <div className="hero-lab-tags" aria-label="Lĩnh vực nổi bật">
-                  <span>Scratch</span>
-                  <span>Web</span>
-                  <span>Game</span>
+                <div className="hero-lab-tags" aria-label="Trụ cột STEAM">
+                  <span>Khoa học</span>
+                  <span>Kỹ thuật</span>
+                  <span>Sáng tạo</span>
                 </div>
               </div>
             </AnimatedContent>
