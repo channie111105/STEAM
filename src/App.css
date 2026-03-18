@@ -451,6 +451,41 @@ main {
   margin-top: 2rem;
 }
 
+.border-glow-shell {
+  position: relative;
+  padding: 1px;
+  border-radius: var(--border-glow-radius);
+}
+
+.border-glow-effect {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: calc(var(--border-glow-opacity) * 1);
+  background:
+    radial-gradient(
+      circle at var(--border-glow-x) var(--border-glow-y),
+      color-mix(in srgb, var(--border-glow-fallback) 78%, white 22%) 0%,
+      transparent 34%
+    ),
+    conic-gradient(
+      from var(--border-glow-cone) at var(--border-glow-x) var(--border-glow-y),
+      transparent 0deg,
+      var(--border-glow-palette) 110deg,
+      transparent 250deg
+    );
+  filter: blur(14px);
+  transition: opacity 160ms ease;
+}
+
+.border-glow-inner {
+  position: relative;
+  z-index: 1;
+  border-radius: calc(var(--border-glow-radius) - 1px);
+  background: var(--border-glow-bg);
+}
+
 .course-card {
   display: grid;
   gap: 1rem;
@@ -460,6 +495,7 @@ main {
   border: 1px solid rgb(27 42 65 / 0.08);
   position: relative;
   overflow: hidden;
+  height: 100%;
   transition:
     transform 200ms ease,
     box-shadow 200ms ease,
