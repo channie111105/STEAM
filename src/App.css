@@ -304,10 +304,33 @@ main {
   border-radius: 1.8rem;
   background: rgb(255 255 255 / 0.58);
   border: 1px solid rgb(27 42 65 / 0.08);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease;
 }
 
 .course-card h3 {
   font-size: 1.5rem;
+}
+
+.course-card::after {
+  content: '';
+  position: absolute;
+  inset: auto -10% -45% auto;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(255 179 71 / 0.28), transparent 70%);
+}
+
+.course-card:hover,
+.course-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgb(27 42 65 / 0.12);
+  border-color: rgb(239 108 51 / 0.22);
 }
 
 .course-level {
