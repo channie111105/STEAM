@@ -5,15 +5,20 @@ export function Header() {
         <span className="brand-badge">S</span>
         <span className="brand-copy">
           <strong>STEAM Lab</strong>
-          <small>Placeholder menu</small>
+          <small>Học sáng tạo cho học sinh 8-15 tuổi</small>
         </span>
       </a>
 
       <nav className="site-nav" aria-label="Main navigation">
-        <a href="#courses">Course</a>
-        <a href="#testimonials">Review</a>
-        <a href="#register">Register</a>
+        <a href="#hero">Trang chủ</a>
+        <a href="#courses">Khóa học</a>
+        <a href="#testimonials">Cảm nhận</a>
+        <a href="#register">Đăng ký</a>
       </nav>
+
+      <a className="header-cta" href="#register">
+        Đăng ký tư vấn
+      </a>
     </header>
   )
 }
