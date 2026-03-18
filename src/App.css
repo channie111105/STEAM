@@ -290,6 +290,52 @@ main {
   padding: 1.75rem;
 }
 
+.footer-grid,
+.footer-links,
+.footer-brand,
+.footer-bottom {
+  display: grid;
+}
+
+.footer-grid {
+  grid-template-columns: 1.4fr 0.8fr 0.8fr;
+  gap: 1.4rem;
+}
+
+.footer-brand {
+  gap: 1rem;
+}
+
+.footer-links {
+  gap: 0.75rem;
+  align-content: start;
+}
+
+.footer-links h3 {
+  font-size: 1.15rem;
+}
+
+.footer-links a,
+.footer-links span {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--accent-strong);
+}
+
+.footer-bottom {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgb(27 42 65 / 0.08);
+  color: var(--muted);
+}
+
 .course-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
