@@ -526,3 +526,65 @@ main {
     transform: rotate(-5deg) translateY(-10px);
   }
 }
+
+@media (max-width: 980px) {
+  .site-header,
+  .hero-section,
+  .content-section,
+  .site-footer {
+    border-radius: 24px;
+  }
+
+  .hero-section,
+  .form-section,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-grid,
+  .testimonial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-stats,
+  .footer-bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .section-shell {
+    width: min(1120px, calc(100% - 1rem));
+  }
+
+  main {
+    gap: 1rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .site-header,
+  .hero-section,
+  .content-section,
+  .site-footer {
+    padding: 1.2rem;
+    border-radius: 20px;
+  }
+
+  .site-header {
+    align-items: start;
+  }
+
+  .course-grid,
+  .testimonial-grid,
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 16rem;
+  }
+
+  .orbit-card {
+    width: min(100%, 18rem);
+  }
+}
