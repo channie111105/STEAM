@@ -444,6 +444,17 @@ main {
   background: rgb(255 253 247 / 0.95);
   color: var(--ink);
   font-size: 1rem;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.enrollment-form input:focus {
+  outline: none;
+  border-color: rgb(239 108 51 / 0.5);
+  box-shadow: 0 0 0 4px rgb(239 108 51 / 0.12);
+  transform: translateY(-1px);
 }
 
 .form-button {

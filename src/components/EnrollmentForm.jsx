@@ -42,6 +42,7 @@ export function EnrollmentForm() {
           <input
             name="name"
             type="text"
+            autoComplete="name"
             placeholder="Nguyen Van A"
             value={form.name}
             onChange={handleChange}
@@ -54,6 +55,7 @@ export function EnrollmentForm() {
           <input
             name="email"
             type="email"
+            autoComplete="email"
             placeholder="phuhuynh@email.com"
             value={form.email}
             onChange={handleChange}
@@ -66,6 +68,9 @@ export function EnrollmentForm() {
           <input
             name="phone"
             type="tel"
+            autoComplete="tel"
+            inputMode="tel"
+            pattern="[0-9]{9,11}"
             placeholder="0901234567"
             value={form.phone}
             onChange={handleChange}
