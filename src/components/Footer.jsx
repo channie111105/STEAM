@@ -25,9 +25,9 @@ export function Footer() {
 
         <div className="footer-links">
           <h3>Liên hệ</h3>
-          <a href="mailto:hello@steamlab.vn">hello@steamlab.vn</a>
+          <a href="mailto:changggfpt@gmail.com">changggfpt@gmail.com</a>
           <a href="tel:0901234567">0901 234 567</a>
-          <span>TP. Ho Chi Minh</span>
+          <span>TP Hà Nội</span>
         </div>
       </div>
 
