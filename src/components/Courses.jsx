@@ -1,9 +1,46 @@
+const courseItems = [
+  {
+    title: 'Scratch Explorer',
+    level: 'Beginner',
+    summary: 'Làm quen tư duy lập trình qua kéo thả, kể chuyện số và mini game.',
+    bullets: ['Tư duy logic', 'Animation', 'Dự án nhóm'],
+  },
+  {
+    title: 'Web Creator',
+    level: 'Intermediate',
+    summary: 'Thiết kế website cá nhân bằng HTML, CSS và JavaScript thực tế.',
+    bullets: ['UI cơ bản', 'Responsive', 'Deploy project'],
+  },
+  {
+    title: 'Game Builder',
+    level: 'Advanced',
+    summary: 'Xây gameplay, nhân vật và hệ thống điểm cho game 2D sáng tạo.',
+    bullets: ['Game loop', 'Level design', 'Pitch sản phẩm'],
+  },
+]
+
 export function Courses() {
   return (
     <section className="content-section section-shell" id="courses">
       <div className="section-heading">
         <p className="eyebrow">Courses</p>
-        <h2>Course cards will be completed on the course branch.</h2>
+        <h2>Ba lộ trình học giúp trẻ đi từ khám phá đến tạo sản phẩm riêng.</h2>
+      </div>
+
+      <div className="course-grid">
+        {courseItems.map((course) => (
+          <article className="course-card" key={course.title}>
+            <p className="course-level">{course.level}</p>
+            <h3>{course.title}</h3>
+            <p>{course.summary}</p>
+
+            <ul className="course-points">
+              {course.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
       </div>
     </section>
   )
