@@ -119,12 +119,13 @@ main {
 }
 
 .site-header-scrolled {
-  opacity: 0.84;
-  border-color: rgb(27 42 65 / 0.08);
+  opacity: 0.52;
+  border-color: rgb(27 42 65 / 0.05);
   background:
-    linear-gradient(135deg, rgb(255 255 255 / 0.72), rgb(249 244 236 / 0.62)),
+    linear-gradient(135deg, rgb(255 255 255 / 0.38), rgb(249 244 236 / 0.28)),
     var(--surface);
-  box-shadow: 0 16px 34px rgb(27 42 65 / 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 20px rgb(27 42 65 / 0.04);
 }
 
 .brand-mark {
