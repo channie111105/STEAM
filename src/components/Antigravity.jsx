@@ -149,12 +149,12 @@ export default function Antigravity({
         const offsetX = targetX - pointer.x
         const offsetY = targetY - pointer.y
         const distance = Math.hypot(offsetX, offsetY) || 1
-        const influenceRadius = Math.max(width, height) * 0.02 * magnetRadius
+        const influenceRadius = Math.max(width, height) * 0.03 * magnetRadius
 
         if ((pointerRef.current.active || autoAnimate) && distance < influenceRadius) {
-          const force = (1 - distance / influenceRadius) * fieldStrength * 1.8
-          targetX += (offsetX / distance) * force * 8
-          targetY += (offsetY / distance) * force * 8
+          const force = (1 - distance / influenceRadius) * fieldStrength * 2.4
+          targetX += (offsetX / distance) * force * 10
+          targetY += (offsetY / distance) * force * 10
         }
 
         particle.targetX = targetX
@@ -162,7 +162,7 @@ export default function Antigravity({
         particle.x += (particle.targetX - particle.x) * lerpSpeed
         particle.y += (particle.targetY - particle.y) * lerpSpeed
 
-        const alpha = Math.min(0.18 + particle.depth * 0.18, 0.95)
+        const alpha = Math.min(0.28 + particle.depth * 0.24, 1)
         const size =
           particleSize * (0.9 + Math.sin(time * 0.0016 + particle.phase) * 0.25)
 
