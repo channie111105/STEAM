@@ -54,6 +54,7 @@ export default function Antigravity({
   pulseSpeed = 3,
   particleShape = 'capsule',
   fieldStrength = 10,
+  trackCursorGlobally = false,
 }) {
   const canvasRef = useRef(null)
   const frameRef = useRef(0)
@@ -183,7 +184,7 @@ export default function Antigravity({
       resize()
     })
 
-    const handlePointerMove = (event) => {
+    const updatePointerPosition = (event) => {
       const bounds = canvas.getBoundingClientRect()
       pointerRef.current = {
         active: true,
@@ -192,7 +193,7 @@ export default function Antigravity({
       }
     }
 
-    const handlePointerLeave = () => {
+    const resetPointerPosition = () => {
       pointerRef.current = {
         active: false,
         x: 0,
@@ -202,14 +203,28 @@ export default function Antigravity({
 
     resize()
     observer.observe(host)
-    canvas.addEventListener('pointermove', handlePointerMove)
-    canvas.addEventListener('pointerleave', handlePointerLeave)
+
+    if (trackCursorGlobally) {
+      window.addEventListener('pointermove', updatePointerPosition)
+      window.addEventListener('pointerleave', resetPointerPosition)
+    } else {
+      canvas.addEventListener('pointermove', updatePointerPosition)
+      canvas.addEventListener('pointerleave', resetPointerPosition)
+    }
+
     frameRef.current = window.requestAnimationFrame(render)
 
     return () => {
       observer.disconnect()
-      canvas.removeEventListener('pointermove', handlePointerMove)
-      canvas.removeEventListener('pointerleave', handlePointerLeave)
+
+      if (trackCursorGlobally) {
+        window.removeEventListener('pointermove', updatePointerPosition)
+        window.removeEventListener('pointerleave', resetPointerPosition)
+      } else {
+        canvas.removeEventListener('pointermove', updatePointerPosition)
+        canvas.removeEventListener('pointerleave', resetPointerPosition)
+      }
+
       window.cancelAnimationFrame(frameRef.current)
     }
   }, [
@@ -226,6 +241,7 @@ export default function Antigravity({
     pulseSpeed,
     ringRadius,
     rotationSpeed,
+    trackCursorGlobally,
     waveAmplitude,
     waveSpeed,
   ])

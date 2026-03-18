@@ -27,6 +27,7 @@ function App() {
           pulseSpeed={2.8}
           particleShape="capsule"
           fieldStrength={9}
+          trackCursorGlobally
         />
       </div>
 
@@ -47,6 +48,7 @@ function App() {
           pulseSpeed={2.8}
           particleShape="capsule"
           fieldStrength={9}
+          trackCursorGlobally
         />
       </div>
 
