@@ -1,12 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const lastScrollYRef = useRef(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 24)
+      const currentScrollY = window.scrollY
+      const isScrollingDown =
+        currentScrollY > lastScrollYRef.current && currentScrollY > 24
+
+      setIsScrolled(isScrollingDown)
+      lastScrollYRef.current = currentScrollY
     }
 
     handleScroll()
