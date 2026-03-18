@@ -290,6 +290,56 @@ main {
   padding: 1.75rem;
 }
 
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.course-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1.8rem;
+  background: rgb(255 255 255 / 0.58);
+  border: 1px solid rgb(27 42 65 / 0.08);
+}
+
+.course-card h3 {
+  font-size: 1.5rem;
+}
+
+.course-level {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgb(239 108 51 / 0.12);
+  color: var(--accent-strong);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.course-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-points li {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgb(27 42 65 / 0.08);
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+
 @keyframes float-card {
   0%,
   100% {
